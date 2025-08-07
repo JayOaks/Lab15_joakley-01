@@ -30,7 +30,7 @@ data = pd.read_csv('OHUR.csv').dropna()
 data.columns = ['Year', 'Unemployment Rate']
 
 # Convert the 'Year' column to datetime format
-data['Year'] = pd.to_datetime(data['Year'])
+data['Year'] = pd.to_datetime(data['Year']).dt.year
 
 # Set the 'Year' column as the index
 data.set_index('Year', inplace=True)
