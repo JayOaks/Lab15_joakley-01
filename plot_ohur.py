@@ -30,8 +30,13 @@ data = pd.read_csv('OHUR.csv').dropna()
 data.columns = ['Year', 'Unemployment Rate']
 
 # Convert the 'Year' column to datetime format
-data['Year'] = pd.to_datetime(data['Year'], format='%Y')
+data['Year'] = pd.to_datetime(data['Year'])
 
 # Set the 'Year' column as the index
 data.set_index('Year', inplace=True)
 
+# View first 5 of DataFrame to check data
+print(data.head())
+
+# Check data info to see if there are still missing/null values
+print(data.info())
