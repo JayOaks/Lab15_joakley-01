@@ -40,3 +40,13 @@ print(data.head())
 
 # Check data info to see if there are still missing/null values
 print(data.info())
+
+# Plot the unemployment rate over the year in 10- year increments
+plt.figure(figsize=(10, 5))
+plt.plot(data.index, data['Unemployment Rate'], marker='o', linestyle='-', color='r')
+plt.title('Ohio Unemployment Rate by Year (every decade)')
+plt.xlabel('Year')
+plt.ylabel('Unemployment Rate (%)')
+plt.xticks(data.index[::10], rotation=45)
+plt.grid()
+plt.show()
