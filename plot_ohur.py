@@ -10,3 +10,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import csv
+
+# Produce header for viewing using enumerate() method
+with open('OHUR.csv', 'r') as file:
+    reader = csv.reader(file)
+
+    # Enumerate through file and print first 5 rows to
+    # get a general idea of the rows and columns
+    for i, row in enumerate(reader):
+        print(f"Row {i}: {row}")
+        if i > 5:
+            break
