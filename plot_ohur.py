@@ -47,6 +47,10 @@ plt.plot(data.index, data['Unemployment Rate'], marker='o', linestyle='-', color
 plt.title('Ohio Unemployment Rate by Year (every decade)')
 plt.xlabel('Year')
 plt.ylabel('Unemployment Rate (%)')
-plt.xticks(data.index[::10], rotation=45)
+
+# Format the x-axis to show every 10 years
+# Set up index to calculate for every 10 years
+decade_ticks = list(range(data.index.min(), data.index.max() + 1, 10))
+plt.xticks(decade_ticks, rotation=45)
 plt.grid()
 plt.show()
